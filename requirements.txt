@@ -1,0 +1,24 @@
+# Install Suzy
+git clone https://github.com/Suzy-Tool/suzy.git
+cd suzy
+make install
+cd ..
+
+# Install gau (GetAllURLs)
+GO111MODULE=on go install github.com/lc/gau/v2/cmd/gau@latest
+
+# Install Gobuster
+go install github.com/OJ/gobuster/v3@latest
+
+# Install Nuclei
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+
+# Install Gitleaks
+git clone https://github.com/gitleaks/gitleaks.git
+cd gitleaks
+make build
+sudo cp gitleaks /usr/local/bin/
+cd ..
+
+# Ensure dependencies for all tools
+sudo apt update && sudo apt install -y jq curl wget make git python3 python3-pip
